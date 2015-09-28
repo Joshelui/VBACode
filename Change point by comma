@@ -1,0 +1,11 @@
+'For Excel.
+'Works fine in Excel 2010
+
+'Modify points by commas
+Private Sub CambiaPuntosPorComas(columna As String)
+'Modifica los puntos por comas en la columna pasada
+Columns(columna & ":" & columna).Select
+ For Each celda In Range(columna & "1:" & columna & Range(columna & Rows.Count).End(xlUp).Row)
+         celda.Value = Replace(celda.Value, ",", ".")
+ Next
+End Sub
